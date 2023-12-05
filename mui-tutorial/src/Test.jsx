@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
-import { Tabs, Tab } from '@mui/material';
+import { Tabs, Tab, AppBar, Toolbar } from '@mui/material';
 
 function Test() {
     const [value, setValue] = useState();
     return (
         <div>
-            <Tabs indicatorColor="secondary" textColor="secondary" value={value} onChange={(e, val) => setValue(val)}>
-                <Tab label="First" />
-                <Tab label="Second" />
-                <Tab label="Third" />
-            </Tabs>
+            <AppBar>
+                <Toolbar>
+                    <Tabs indicatorColor="secondary" textColor="inherit" value={value} onChange={(e, val) => setValue(val)}>
+                        <Tab label="First" />
+                        <Tab label="Second" />
+                        <Tab label="Third" />
+                    </Tabs>
+                </Toolbar>
+            </AppBar>
         </div>
     )
 }
